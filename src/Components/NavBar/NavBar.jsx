@@ -12,7 +12,7 @@ export const NavBar = () => {
     return (
         <nav className="navbar">
             <Link to="/">
-                <img src={logo} />
+                <img src={logo} className="nav-logo"/>
             </Link>
             <div className="nav-items">
                 <Link to="/recipedetails" className="links">
@@ -22,7 +22,7 @@ export const NavBar = () => {
                     Dietary Restrictions
                 </Link>
                 <div className="search-container">
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    <FontAwesomeIcon icon={faMagnifyingGlass} className="icon"/>
                     <input
                         className="search-input"
                         type="search"
