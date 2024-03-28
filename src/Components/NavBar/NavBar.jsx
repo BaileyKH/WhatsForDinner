@@ -4,17 +4,15 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-import logo from "/src/assets/logo.png";
-
 import "./NavBar.css";
 
 export const NavBar = () => {
     return (
         <nav className="navbar">
-            <Link to="/">
-                <img src={logo} className="nav-logo"/>
-            </Link>
             <div className="nav-items">
+                <Link to="/" className="links">
+                    Home
+                </Link>
                 <Link to="/recipedetails" className="links">
                     Recipe Page
                 </Link>

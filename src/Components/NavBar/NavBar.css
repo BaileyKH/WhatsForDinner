@@ -1,8 +1,9 @@
 .navbar {
-    padding: 0 25px 25px;
+    padding: 40px 25px 25px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    position: absolute;
 }
 
 .nav-logo {
@@ -22,17 +23,15 @@
 .nav-items .links{
     color: var(--secondary-color);
     text-decoration: none;
-    transition: color 0.2s ease-in-out;
 }
 
 .nav-items .links:hover {
-    color: var(--tertiary-color);
     text-decoration: underline;
     text-underline-offset: 5px;    
 }
 
 .search-container {
-    background: #E4E6C3;
+    background: #F7ECE1;
     width: max-content;
     display: flex;
     justify-content: center;
