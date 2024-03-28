@@ -13,12 +13,6 @@ export const NavBar = () => {
                 <Link to="/" className="links">
                     Home
                 </Link>
-                <Link to="/recipedetails" className="links">
-                    Recipe Page
-                </Link>
-                <Link to="/dietaryrestrictions" className="links">
-                    Dietary Restrictions
-                </Link>
                 <div className="search-container">
                     <FontAwesomeIcon icon={faMagnifyingGlass} className="icon"/>
                     <input
@@ -27,6 +21,12 @@ export const NavBar = () => {
                         placeholder="Search"
                     />
                 </div>
+                <Link to="/recipedetails" className="links">
+                    Recipe Page
+                </Link>
+                <Link to="/dietaryrestrictions" className="links">
+                    Dietary Restrictions
+                </Link>
             </div>
         </nav>
     );

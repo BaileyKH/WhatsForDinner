@@ -1,9 +1,10 @@
 .navbar {
-    padding: 40px 25px 25px;
+    background-color: var(--primary-color);
+    padding: 40px 25px 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    /* position: absolute; */
 }
 
 .nav-logo {
@@ -14,9 +15,9 @@
 .nav-items {
     display: flex;
     gap: 25px;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    font-size: 1.1em;
+    font-size: 1.3em;
     letter-spacing: 1px;
 }
 
