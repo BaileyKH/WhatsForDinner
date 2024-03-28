@@ -4,6 +4,7 @@ import { NavBar } from './Components/NavBar/NavBar';
 import { Home } from './Pages/Home';
 import { RecipeDetail } from './Pages/RecipeDetail';
 import { DietaryRestrictions } from './Pages/DietaryRestrictions';
+import { SearchResults } from './Pages/SearchResults';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route exact path ="/" element={<Home />} />
         <Route path="/recipedetails" element={<RecipeDetail />} />
         <Route path="/dietaryrestrictions" element={<DietaryRestrictions />} />
+        <Route path = "/search" element={<SearchResults />} />
       </Routes>
     </Router>
     </>

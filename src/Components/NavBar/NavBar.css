@@ -42,6 +42,12 @@
     border-radius: 28px;
 }
 
+.search-container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .search-container .icon {
     color: var(--secondary-color);
 }
