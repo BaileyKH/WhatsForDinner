@@ -1,21 +1,23 @@
 const BASE_URL = "https://api.spoonacular.com";
-const API_KEY = import.meta.env.VITE_SPOONACULAR_API; 
+const API_KEY = import.meta.env.VITE_SPOONACULAR_API;
 
-export const searchRecipesByIngredients = async (ingredients) => {
+export const searchRecipesByName = async (query) => {
     const params = new URLSearchParams({
-        ingredients: ingredients,
+        query: query,
+        number: 15, 
         apiKey: API_KEY,
+        addRecipeInformation: true, 
     });
 
     try {
-        const response = await fetch(`${BASE_URL}/recipes/findByIngredients?${params}`);
+        const response = await fetch(`${BASE_URL}/recipes/complexSearch?${params}`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        return data;
+        return data.results; 
     } catch (error) {
         console.error('Error fetching recipes:', error);
-        throw error; 
+        throw error;
     }
 };

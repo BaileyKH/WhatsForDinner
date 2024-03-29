@@ -1,0 +1,24 @@
+.main-recipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.inner-recipe-container {
+    background-color: var(--tertiary-color);
+    padding: 0 15px;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.inner-recipe-container h2, .inner-recipe-container p {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    padding: 10px 0;
+}
+
+.inner-recipe-container img {
+    border-radius: 10px;
+}

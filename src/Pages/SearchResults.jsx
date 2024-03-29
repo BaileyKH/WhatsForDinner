@@ -1,37 +1,34 @@
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { searchRecipesByIngredients } from '../services/api';
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
-const useQuery = () => new URLSearchParams(useLocation().search);
+import { searchRecipesByName } from "/src/services/api.js";
+
+import { RecipeCard } from "/src/Components/RecipeCard/RecipeCard.jsx";
 
 export const SearchResults = () => {
-
-    const [results, setResults] = useState([]);
-    const query = useQuery();
-    const searchQuery = query.get('q');
+    const [recipes, setRecipes] = useState([]);
+    const query = new URLSearchParams(useLocation().search).get("q");
 
     useEffect(() => {
-        const fetchData = async () => {
-            if (searchQuery) {
+        const fetchRecipes = async () => {
+            if (query) {
                 try {
-                    const data = await searchRecipesByIngredients(searchQuery);
-                    setResults(data);
+                    const results = await searchRecipesByName(query);
+                    setRecipes(results);
                 } catch (error) {
-                    console.error("Error fetching search results:", error);
+                    console.error("Error fetching recipes:", error);
                 }
             }
         };
 
-        fetchData();
-    }, [searchQuery]);
+        fetchRecipes();
+    }, [query]);
 
-    return(
+    return (
         <div>
-            {results.map((results, index) => (
-                <div key={index}>
-                    <h3>{results.title}</h3>
-                </div>
+            {recipes.map((recipe) => (
+                <RecipeCard key={recipe.id} recipe={recipe} />
             ))}
         </div>
     );
-}
+};
